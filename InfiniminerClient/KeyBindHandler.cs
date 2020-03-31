@@ -121,7 +121,7 @@ namespace Infiniminer
             try
             {
                 //Key bind
-                Keys actualKey = (Keys)Enum.Parse(typeof(Keys), key, true);
+                var actualKey = (Keys)Enum.Parse(typeof(Keys), key, true);
                 if (Enum.IsDefined(typeof(Keys), actualKey))
                 {
                     keyBinds.Add(actualKey, (Buttons)button);
