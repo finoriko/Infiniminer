@@ -35,9 +35,7 @@ namespace Infiniminer
 
         public bool anyPacketsReceived = false;
 
-        public InfiniminerGame(string[] args)
-        {
-        }
+        public InfiniminerGame(string[] args) { }
 
         public void setServername(string newName)
         {
@@ -493,7 +491,8 @@ namespace Infiniminer
             //Now moving to DatafileWriter only since it can read and write
             DatafileWriter dataFile = new DatafileWriter("client.config.txt");
             if (dataFile.Data.ContainsKey("width"))
-                graphicsDeviceManager.PreferredBackBufferWidth = int.Parse(dataFile.Data["width"], System.Globalization.CultureInfo.InvariantCulture);
+                // graphicsDeviceManager.PreferredBackBufferWidth = int.Parse(dataFile.Data["width"], System.Globalization.CultureInfo.InvariantCulture);
+                graphicsDeviceManager.PreferredBackBufferWidth = 1920;
             if (dataFile.Data.ContainsKey("height"))
                 graphicsDeviceManager.PreferredBackBufferHeight = int.Parse(dataFile.Data["height"], System.Globalization.CultureInfo.InvariantCulture);
             if (dataFile.Data.ContainsKey("fullscreen"))
