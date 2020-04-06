@@ -484,17 +484,18 @@ namespace Infiniminer
         protected override void Initialize()
         {
             graphicsDeviceManager.IsFullScreen = false;
-            graphicsDeviceManager.PreferredBackBufferWidth = 1024;
-            graphicsDeviceManager.PreferredBackBufferHeight = 768;
+            graphicsDeviceManager.PreferredBackBufferWidth = 1920;//1024
+            graphicsDeviceManager.PreferredBackBufferHeight = 1080;//768
             graphicsDeviceManager.PreferredDepthStencilFormat = DepthFormat.Depth24Stencil8;
             graphicsDeviceManager.GraphicsProfile = GraphicsProfile.HiDef; // 쉐이더오류 수정
             //Now moving to DatafileWriter only since it can read and write
             DatafileWriter dataFile = new DatafileWriter("client.config.txt");
             if (dataFile.Data.ContainsKey("width"))
-                // graphicsDeviceManager.PreferredBackBufferWidth = int.Parse(dataFile.Data["width"], System.Globalization.CultureInfo.InvariantCulture);
+                //graphicsDeviceManager.PreferredBackBufferWidth = int.Parse(dataFile.Data["width"], System.Globalization.CultureInfo.InvariantCulture);
                 graphicsDeviceManager.PreferredBackBufferWidth = 1920;
             if (dataFile.Data.ContainsKey("height"))
-                graphicsDeviceManager.PreferredBackBufferHeight = int.Parse(dataFile.Data["height"], System.Globalization.CultureInfo.InvariantCulture);
+                //graphicsDeviceManager.PreferredBackBufferHeight = int.Parse(dataFile.Data["height"], System.Globalization.CultureInfo.InvariantCulture);
+                graphicsDeviceManager.PreferredBackBufferHeight = 1080;
             if (dataFile.Data.ContainsKey("fullscreen"))
                 graphicsDeviceManager.IsFullScreen = bool.Parse(dataFile.Data["fullscreen"]);
             if (dataFile.Data.ContainsKey("handle"))
